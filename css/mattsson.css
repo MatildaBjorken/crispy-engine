@@ -1,0 +1,172 @@
+@font-face {
+    font-family: 'Quicksand';
+    src: url( /css/font/Quicksand-Regular.otf) format('oft');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+
+html {
+    background-color: hsl(60, 100%, 55%);
+}
+
+body{
+    font-family: 'Quicksand', 'Times New Roman', Times, serif;
+    line-height: 20px;
+  
+}
+
+
+header{
+    padding-top: 40px;
+    
+}
+
+
+h1 {
+
+    text-align: center;
+    letter-spacing: 2px;
+    background-color: rgb(230, 40, 40);
+    padding: 30px;
+    color : white
+    
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+        transform :translateY(-200%);
+    }
+
+    40% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    55% { 
+        transform: translateY(-6px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.group :nth-child(2) .styck {
+    animation-delay : .5s;
+}
+
+.group :nth-child(3) .styck {
+    animation-delay : 1s;
+}
+
+.site-nav {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.site-nav ul {
+    margin: 0;
+    padding: 0;
+  }
+
+.site-nav li {
+    list-style: none;
+    float : center;
+}
+
+.site-nav a {
+    animation: fade 1s forwards;
+
+
+    text-decoration: none;
+
+    display: inline-block;
+    margin-top: 10px;
+    color:  rgb(230, 40, 40);hsl(58, 100%, 64%);
+    padding: 10px 10px;
+    border: 2px solid hsl(58, 100%, 64%);
+    background-color: white;
+    border-radius: 30px;
+    transition-property: color, background-color;
+    transition-duration: 2s;
+} 
+
+.site-nav a:hover {
+    background-color: blue;
+}
+
+
+.site-nav li {
+    list-style: none;
+    color:rgb(0, 0, 0);
+    text-align: center;
+}
+
+
+
+
+.main-area {
+    background-color: rgb(230, 40, 40);
+    color:white;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-right: 50px;
+    padding-left: 50px;  
+  }
+
+.container {
+    width: 940px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #FFF;
+    box-sizing: border-box;
+    background-image: url(../images/IMG_8131.jpg);
+    background-repeat: repeat-none;
+    background-position: center center;
+    background-size: 300px ;
+  
+  }
+
+
+.hidden{
+    position: absolute;
+    height: 0;
+    width: 0;
+    overflow: hidden;
+    visibility: hidden;
+}
+
+input{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 100%;
+}
+
+
+
+@media screen and (max-width: 700px){
+
+    .content-area group {
+        width : auto;
+        float: none;
+    }
+    
+}
+
+
+
+
+
+
+footer {
+    text-align: center;
+    font-size: 85%;
+    color:blue;
+    padding-bottom: 20px;
+    padding-top: 20px;
+  }
+

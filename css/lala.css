@@ -1,0 +1,158 @@
+@font-face {
+    font-family: 'Quicksand';
+    src: url( /css/font/Quicksand-Regular.otf) format('oft');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html {
+    background-color: hsl(21, 100%, 81%);
+}
+
+body{
+    font-family: 'Quicksand', 'Times New Roman', Times, serif;
+    line-height: 25px;
+  
+}
+
+
+header{
+    padding-top: 40px;
+    
+}
+
+
+h1 {
+
+    text-align: center;
+    letter-spacing: 2px;
+    background-color: rgb(163, 245, 189);
+    padding: 30px;
+    color : white
+    
+}
+
+
+.site-nav {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.site-nav li {
+    list-style: none;
+    float : center;
+}
+
+.site-nav a {
+    display: inline-block;
+    margin-top: 10px;
+    color: rgb(163, 245, 189);
+    padding: 5px 5px;
+    border: 2px solid hsl(21, 100%, 81%);
+} 
+
+.site-nav a:hover {
+    background-color: grey;
+}
+
+
+.site-nav li {
+    list-style: none;
+    color:rgb(0, 0, 0);
+    text-align: center;
+}
+
+.main-area {
+    background-color: rgb(163, 245, 189);
+    color:white;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    padding-right: 50px;
+    padding-left: 50px;  
+  }
+
+.container {
+    width: 940px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #FFF;
+    box-sizing: border-box;
+
+  }
+
+
+form {
+    background-color: hsl(21, 100%, 81%);
+    padding : 20px 0px;
+}
+
+.hidden{
+    position: absolute;
+    height: 0;
+    width: 0;
+    overflow: hidden;
+    visibility: hidden;
+}
+
+input{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 100%;
+}
+
+input[type="email"],input[type="password"], select  {
+    width: 50%;
+    display: block;
+    box-sizing: border-box;
+    padding: 10px;
+    margin-bottom: 15px;
+    margin-left: 250px;
+    border: 2px solid rgb(163, 245, 189);
+    outline: none;
+}
+
+.checkbox-text{
+    font-size: 80%;
+    color: gray;
+
+}
+
+
+input[type="email"],input[type="password"] {
+    border: 2px solid rgb(163, 245, 189);
+    box-shadow: inset 1px 1px px rgb(0, 0, 0, .1);
+}
+
+
+input[type="submit"] {
+    width: 20%;
+    display: block;
+    box-sizing: border-box;
+    background-color: rgb(163, 245, 189);
+    color: #fff;
+    padding: 10px 0;
+    border: 1px solid  rgb(163, 245, 189);
+    border-radius: 3px;
+    outline: none;
+    margin-bottom: 10px;
+    color: gray;
+    border-radius: 10px;
+    margin-left: 400px;
+    margin-bottom: 10px;
+    outline: none;
+}
+
+input[type="submit"]:hover,
+input[type="submit"]:focus {
+  border: 1px solid rgb(118, 198, 143);
+  background-color:rgb(120, 223, 153);
+
+}
+
+footer {
+    text-align: center;
+    font-size: 85%;
+    color: #999;
+    padding-bottom: 20px;
+    padding-top: 20px;
+  }
+

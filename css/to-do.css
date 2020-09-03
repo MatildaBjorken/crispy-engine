@@ -1,0 +1,51 @@
+.perfekt {
+    
+    text-transform: uppercase;
+    position: absolute;
+    
+    left: 40%;
+
+}
+
+h1 {
+    color: skyblue;
+    font-size: 300%;
+
+}
+
+.yeh {
+  margin-right: 5000px;
+  background-color: #ff9060;
+  text-transform: uppercase;
+  border: none;
+  color: white;
+  padding: 10px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 4px 2px;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+button:hover{
+    transform: scale(1.1);
+}
+
+
+button {
+    margin-right: 5000px;
+    background-color: skyblue;
+    text-transform: uppercase;
+    border: none;
+    color: white;
+    padding: 8px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: 4px 15px;
+    border-radius: 25px;
+    cursor: pointer;
+  }
