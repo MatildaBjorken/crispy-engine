@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../css/eyes.css">
+    <title></title>
+
+  
+  </head>
+  <body>
+    <img src="../images/eyes.png" class="smile" alt="">
+
+  <div class="eyes">
+    <div class="eye">
+      <div class="ball"></div>
+    </div>
+
+    <div class="eye">
+      <div class="ball"></div>
+    </div>
+  </div>
+
+
+<script>
+
+  let balls = document.getElementsByClassName("ball");
+
+  document.onmousemove = function(){
+    let x = event.clientX * 100 / window.innerWidth + "%";
+    let y = event.clientY * 100 / window.innerHeight + "%";
+    
+    //event.clientX = horizontal coordinate of the mouse
+    //event.clientY = vertical coordinate of the mouse
+    //window.innerWidth = the browsers width
+    //window.innerHeight = the browsers height
+
+    for(let i=0;i<2;i++){
+      balls[i].style.left = x;
+      balls[i].style.top = y;
+      balls[i].style.transform = "translate(-"+x+",-"+y+")";
+    }
+  }
+  //define variable i with value 0, it is where the loop starts, i for iteration, repeat
+  // (i < 2) is condition. Checks if i is lower than 2. The loop is running while this condition is true. it is for both of the eyes.
+  //(i++), Increment the value of the i variable by 1. The value of variable i is incremented after each iteration of for loop.
+
+
+
+</script>
+
+  </body>
+</html>

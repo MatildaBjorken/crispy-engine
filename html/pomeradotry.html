@@ -1,0 +1,333 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/pomerado.css">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+
+    
+    <div id="cursor"></div>
+
+    <div class="container">
+
+
+
+        <div class="settings">
+            <p class="timeClock">work</p>
+            <button class="plusSymbol"id="workPlus">+</button>
+    
+            <div> <span id="workMinutes">25</span>min</div>
+    
+            <button class="minusSymbol"id="workMinus">-</button>
+        </div>
+        
+        <div id="pomerado">
+            
+            <div id="circle">
+                <div id="condition"></div>
+                <div id="timerDisplay">00:00</div>
+                
+                    <button id="startTimer" class="btn">Start</button>
+                    <br>
+                    <button id="resetTimer" class="btn">RESET</button>
+                
+            </div>  
+        </div>
+
+    <div class="settings">
+        <p class="timeClock">break</p>
+        <button class="plusSymbol"id="breakPlus">+</button>
+
+        <div> <span id="breakMinutes">5</span>min</div>
+
+        <button class="minusSymbol"id="breakMinus">-</button>
+    </div>
+</div>
+
+
+    <div id="main">
+        <h1 class="text">Break Ideas!</h1>
+        <div id="chill"></div>
+        
+        <div id ="symbol"></div>
+        <div id ="button">try me</div>
+    </div>
+
+
+ 
+    
+    <div id="background-wrap">
+        <div class="x1">
+            <div class="cloud"></div>
+        </div>
+    
+        <div class="x2">
+            <div class="cloud"></div>
+        </div>
+    
+        <div class="x3">
+            <div class="cloud"></div>
+        </div>
+    
+        <div class="x4">
+            <div class="cloud"></div>
+        </div>
+    
+        <div class="x5">
+            <div class="cloud"></div>
+        </div>
+    </div>
+
+
+ <div class ="frame">
+
+
+
+<div class="calendar">
+    <div class="pages"></div>
+  </div>
+  
+</div>
+
+    </html>   
+
+
+
+<script >
+
+const pages = document.querySelector('.pages');
+const locale = window.navigator.language || 'en-us'
+
+let date = new Date();
+let dayNum = date.getDate();
+let month = date.getMonth();
+let dayName = date.toLocaleString(locale, { weekday: 'long' });
+let monthName = date.toLocaleString(locale, { month: 'long' });
+let year = date.getFullYear();
+
+function daysInMonth (month, year) {
+  return new Date(year, month + 1, 0).getDate();
+}
+
+function getNewDate () {
+  if (dayNum < daysInMonth(month, year)) {
+    dayNum++;
+  } else {
+    dayNum = 1;
+  } 
+  if (dayNum === 1 && month < 11) {
+    month++;
+  } else if (dayNum === 1 && month === 11) {
+    month = 0;
+  }
+  if (dayNum ===1 && month === 0) {
+    year++;
+  }
+  const newDate = new Date(year, month, dayNum);
+  dayName = newDate.toLocaleString('en-us', { weekday: 'long' });
+  monthName = newDate.toLocaleString('en-us', { month: 'long' });
+}
+
+function handleClick (e) {
+  getNewDate();
+  updateCalendar(e.target);
+}
+
+function updateCalendar (target) {
+  if (target && target.classList.contains('page')) {
+    target.classList.add('tear');
+    setTimeout(() => {
+      pages.removeChild(target);
+    }, 800);
+  } else {
+    return;
+  }
+  renderPage();
+}
+
+function renderPage () {
+  const newPage = document.createElement('div');
+  newPage.classList.add('page');
+  newPage.innerHTML = `
+    <p class="month">${monthName}</p>
+    <p class="day">${dayNum}</p>
+    <p class="day-name">${dayName}</p>
+    <p class="year">${year}</p>
+  `;
+  pages.appendChild(newPage);
+}
+
+renderPage();
+
+pages.addEventListener('click', handleClick);
+
+    var cursor = document.getElementById("cursor")
+    document.addEventListener("mousemove", 
+        function(e) {
+            var x = e.clientX
+            var y = e.clientY
+            cursor.style.left = x + "px"
+            cursor.style.top = y + "px"
+        })
+        
+
+    //clock
+
+    /* define variables */
+
+    const timerDisplay = document.querySelector("#timerDisplay")
+    const startTimer = document.querySelector("#startTimer")
+    const resetTimer = document.querySelector ("#resetTimer")
+    const workMinutes = document.querySelector ("#workMinutes")
+    const breakMinutes = document.querySelector("#breakMinutes")
+    const condition = document.querySelector("#condition")
+
+    
+
+    const workPlus = document.querySelector("#workPlus")
+    const workMinus = document.querySelector("#workMinus")
+    const breakPlus = document.querySelector("#breakPlus")
+    const breakMinus = document.querySelector("#breakMinus")
+
+    let isBreak = true
+    let isPaused = true
+    let toReset = false
+    let seconds = 0
+    let remaining = 0
+    let countdown = 0
+
+     /* start and reset button */
+
+     startTimer.addEventListener("click", () => {
+        clearInterval(countdown)
+        if (isPaused) {
+            startCountdown()
+            startTimer.textContent = "Pause"
+            condition.textContent ="lets go"
+            isPaused = false
+        } else {
+            remaining = seconds
+            startTimer.textContent = "Continue"
+            condition.textContent ="keep on going"
+            isPaused = true
+        }
+ })
+
+
+    resetTimer.addEventListener ("click", ()=> {
+        clearInterval(countdown)
+        seconds = workMinutes.textContent * 60
+        countdown = 0
+        remaining = 0
+        isPaused = true
+        isBreak = true
+        condition.textContent ="you are doing great"
+        startTimer.textContent = "start"
+        
+        displayTimeLeft(seconds)
+    })
+
+    function timer() {
+        seconds--
+        if (seconds <0) {
+            clearInterval(countdown)
+            alarm.currentTime = 0;
+            alarm.play();
+        
+            if (isBreak) {
+                seconds = breakMinutes.textContent * 60
+                condition.textContent ="have a break"
+                isBreak = false
+            } else {
+                seconds = workMinutes.textContent * 60
+                condition.textContent ="keep on going"
+                isBreak = true
+            }
+            countdown= setInterval (timer, 1000)
+            return
+        }
+        displayTimeLeft(seconds)
+    } 
+
+    function startCountdown() {
+        if (remaining != 0) {
+        seconds = remaining
+        } else {
+            seconds = workMinutes.textContent * 60
+            condition.textContent="lets go"
+        }
+        countdown = setInterval (timer, 1000)
+    }
+
+    function displayTimeLeft(seconds) {
+        const minutes =  Math.floor(seconds / 60)
+        const moreSeconds = seconds % 60
+        timerDisplay.textContent = `${minutes}:${moreSeconds < 10 ? '0' : ''}${moreSeconds}`
+    }
+
+
+    workPlus.addEventListener("click", ()=> {
+        let x = parseInt(workMinutes.textContent)
+        if (x < 60) {
+            workMinutes.textContent = x+5
+        }
+    })
+
+
+    workMinus.addEventListener('click', () => {
+        let x = parseInt(workMinutes.textContent)         
+        if (x > 5) {
+            workMinutes.textContent = x-5
+        }                       
+    })
+
+    breakPlus.addEventListener('click', () => {
+        let x = parseInt(breakMinutes.textContent)          
+        if (x < 60) {
+            breakMinutes.textContent = x+1
+    }                       
+    })
+
+    breakMinus.addEventListener('click', () => {
+        let x = parseInt(breakMinutes.textContent);          
+        if (x > 1) {
+            breakMinutes.innerHTML = x-1
+   }                       
+ }) 
+
+
+
+
+
+
+    //random generator
+    
+
+    let chills = [
+        {chill: "Step Outside"},
+        {chill: "Take 10 Deep Breaths"},
+        {chill: "Eat an Apple S-L-O-W-L-Y"},
+        {chill: "Make Animals of the Clouds"},
+        {chill: "Laugh off the Tension"},
+        {chill: "Dance Party!"},
+        {chill: "Re-Waterize Yourself"}
+        ]
+
+        let chill = document.getElementById("chill")
+        let symbol = document.getElementById("symbol")
+        let button = document.getElementById("button")
+
+        button.addEventListener("click",()=> {
+            let random = Math.floor(Math.random() * chills.length)
+
+            chill.innerHTML = chills[random].chill
+            //symbol.innerHTML = chills[random].symbol
+    })
+
+    </script>
+</body>
+</html>

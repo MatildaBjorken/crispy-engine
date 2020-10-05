@@ -1,0 +1,635 @@
+#matilda {
+    position: absolute;
+    top: 5%;
+    left: 85%;
+    width: 10%;
+    transition-timing-function: linear;
+    -webkit-animation: spin 9s linear infinite;
+    -moz-animation: spin 9s linear infinite;
+    animation: spin 9s linear infinite;
+}
+
+img {
+	width: 100%;
+	height: auto;
+	object-fit: cover;
+}
+
+.about-image {
+	position: relative;
+	width: 80%;
+	top: 38rem;
+}
+#row{
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0);
+    height: 3vh;
+    
+}
+.about-page #dot {
+    height: 40px;
+    width: 40px;
+    border-radius:50%;
+    background-color:rgb(255, 255, 255);
+    margin: 15px;
+    display: inline-block;
+    animation: scaling 4s ease-in-out infinite;
+   
+}
+
+@keyframes scaling{
+    0%, 100%{
+      
+      background-color: rgb(91, 255, 189);
+    }
+    40%{
+      
+      background-color:  rgb(249, 249, 149)
+    }
+    50%{
+      
+      background-color: rgb(255, 177, 118);
+    }
+
+    60%{
+        background-color: rgb(118, 226, 255);
+    }
+  }
+
+
+  #dot:nth-child(0){
+    animation-delay:0.3s;
+  }
+  #dot:nth-child(1){
+    animation-delay:0.6s;
+  }
+  #dot:nth-child(2){
+    animation-delay:0.9s;
+  }
+  #dot:nth-child(3){
+    animation-delay:1.1s;
+  }
+  #dot:nth-child(4){
+    animation-delay:1.4s;
+  }
+  #dot:nth-child(5){
+    animation-delay:1.7s;
+  }
+.smile {
+    
+	width: 10%;
+	position: absolute;
+	top: 1170px;
+	padding-top: 50px;
+	opacity: 1;
+	transition: .5s ease;
+	backface-visibility: hidden;
+	
+    transition-timing-function: linear;
+    -webkit-animation: spin 2s linear infinite;
+    -moz-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin{
+    100%{-webkit-transform: rotate(360deg);}
+}
+
+@-moz-keyframes spin{
+    100%{-webkit-transform: rotate(360deg);}
+}
+@-keyframes spin{
+    100%{-webkit-transform: rotate(360deg);}
+}
+
+
+
+.animation {
+	color: rgb(255, 255, 255);
+	position: absolute;
+}
+
+
+
+
+.cv {
+    
+	color: rgb(255, 255, 255);
+	position: relative;
+	padding-top: 50px;
+}
+
+.cv:hover {
+    
+	font-size: 170%;
+	color: black;
+}
+
+.about {
+	height: 180vh;
+	display: flex;
+}
+
+.about-title {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 40px;
+	width: 50%;
+	height: 100vh;
+}
+
+
+
+@media screen and (max-width: 900px) {
+	.about-page div>p {
+		display: none;
+	}
+	.about {
+		display: grid;
+		width: 100%;
+		height: 300vh;
+	}
+	.about .about-page {
+		width: 100%;
+		display: block;
+	}
+	.about .about-title {
+        position: relative;
+        
+	}
+	.about .about-title .about-image {
+		top: 40px;
+    }
+
+    .movedown {
+        
+        padding-bottom: 10%;
+        height: 0vh;
+    }
+    
+    .about-page .cv{
+        padding-top: 130px;
+        justify-content: center;
+    }
+	.hello .color_button {
+		top: 90%;
+		left: 68%;
+	}
+	#hello {
+		background-image: url(../images/minsida.png);
+		background-size: cover;
+		max-width: 100%;
+		height: auto;
+    }
+    
+    .smile{
+        width: 30%;
+        position: absolute;
+        top: 180px;
+        left:90%;
+ 
+    }
+
+    .about .about-image {
+        left: 50%;
+        display: block;
+        width: 100%;
+        top: 300px;
+    }
+
+    .flip{
+        left:70%;
+    }
+
+    aside .wavy {
+        top:480%; 
+      
+    }
+
+    #row {
+        display: none;
+    }
+
+    #matilda{
+        position: absolute;
+        top: 5%;
+        left: 80%;
+        width: 18%;
+    }
+
+    .port {
+        display: none;
+    }
+
+    
+   
+}
+
+@media screen and (max-width: 700px) {
+    .smile{
+        width: 20%;
+        position: absolute;
+        top: 270px;
+        left:90%;
+
+    }
+    .about .about-title .flip #flip-text{
+        color: white;
+        
+    }
+    .about-page .cv{
+        padding-top: 30px;
+        justify-content: center;
+    }
+    
+}
+
+.about-page {
+    width: 50%;
+    
+}
+
+.about-page div .smaller{
+    height: 0vh;
+}
+
+.about-page div {
+    
+	height: 60vh;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	flex-direction: column;
+    font-size: 20px;
+    
+}
+
+.about-page div>p {
+    
+	width: 80%;
+	line-height: 30px;
+	font-size: 20px;
+}
+
+.movedown {
+    padding-top: 20px;
+    height: 0vh;
+}
+
+.about-page div:nth-child(1):hover {
+    background-color:rgb(118, 226, 255);
+    cursor: pointer;
+    -webkit-transition: background-color 3s ease-out;
+    -moz-transition: background-color 3s ease-out;
+    -o-transition: background-color 3s ease-out;
+    transition: background-color 3s ease-in;
+}
+.about-page div:nth-child(3):hover {
+    background-color:rgb(91, 255, 189);
+    cursor: pointer;
+    -webkit-transition: background-color 3s ease-out;
+    -moz-transition: background-color 3s ease-out;
+    -o-transition: background-color 3s ease-out;
+    transition: background-color 3s ease-out;
+}  
+
+
+.about-page div:nth-child(1) {
+	background-color: rgb(91, 255, 189);
+}
+
+.about-page div:nth-child(2) {
+	background-color: rgb(205, 120, 255);
+}
+
+.about-page div:nth-child(3) {
+	background-color: rgb(118, 226, 255);
+}
+
+.part-two {
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: rgb(255, 177, 118);
+}
+
+
+/* social media icons */
+
+.social-media ul {
+    z-index: 1;
+	position: absolute;
+	padding: 40px;
+	padding-top: 200px;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	display: flex;
+}
+
+.social-media ul li {
+	list-style: none;
+	margin: 0 20px;
+}
+
+.social-media ul li .fa {
+	color: #000000;
+	font-size: 30px;
+	line-height: 50px;
+}
+
+.social-media ul li a {
+	position: relative;
+	display: block;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	background-color: white;
+	text-align: center;
+	transform: translate(0, 0px);
+	cursor: auto;
+}
+
+.social-media ul li a:hover {
+	transform: translate(0, -10px);
+}
+
+.social-media ul li:nth-child(1) a:hover {
+	background-color: rgb(118, 226, 255);
+}
+
+.social-media ul li:nth-child(2) a:hover {
+	background-color: rgb(205, 120, 255);
+}
+
+.social-media ul li:nth-child(3) a:hover {
+	background-color: rgb(249, 249, 149);
+}
+
+
+/* end social media icons */
+
+
+/* fliping */
+
+.flip {
+	font-size: 50px;
+	padding-bottom: 20px;
+	text-align: center;
+	position: absolute;
+}
+
+#flip-text {
+	height: 40px;
+	overflow: hidden;
+}
+
+#flip-text>div>div {
+	color: white;
+	height: 35px;
+	display: inline-block;
+	margin-bottom: 35px;
+}
+
+#flip-text div:first-child {
+	animation: animate 6s linear infinite;
+}
+
+#flip-text div div {
+	color: rgb(91, 255, 189);
+}
+
+#flip-text div:first-child div {
+	color: rgb(255, 177, 118);
+}
+
+#flip-text div:last-child div {
+	color: rgb(118, 226, 255);
+}
+
+@keyframes animate {
+	0% {
+		margin-top: -270px;
+	}
+	5% {
+		margin-top: -180px;
+	}
+	45% {
+		margin-top: -90px;
+	}
+	85% {
+		margin-top: 0px;
+	}
+	99.99% {
+		margin-top: 20px;
+	}
+	99.9999999% {
+		margin-top: -270px;
+	}
+}
+
+
+/* end fliping */
+
+
+/* sliding text */
+
+.slide-main {
+	position: absolute;
+	width: 100%;
+	height: 100vh;
+	overflow: hidden;
+}
+
+.slide-main .sliding {
+	width: 100%;
+	display: flex;
+}
+
+.slide-main .sliding div {
+	text-transform: uppercase;
+	color: black;
+	font-size: 6em;
+	font-weight: 900;
+	background-color: white;
+	white-space: nowrap;
+	animation: animations 40s linear infinite;
+	animation-delay: -40s;
+}
+
+.slide-main .sliding div:nth-child(2) {
+	animation: animations2 40s linear infinite;
+	animation-delay: -20s;
+}
+
+@keyframes animations {
+	0% {
+		transform: translateX(100%);
+	}
+	100% {
+		transform: translateX(-100%);
+	}
+}
+
+@keyframes animations2 {
+	0% {
+		transform: translateX(0%);
+	}
+	100% {
+		transform: translateX(-200%);
+	}
+}
+
+
+/* end sliding text */
+
+
+/* flip image */
+
+.portfolio-img {
+    
+    display: block;
+    width: 80%;
+    height: auto;
+    
+}
+
+.port {
+	position: relative;
+	display: inline-block;
+}
+
+.back {
+    
+    width: 80%;
+    height: auto;
+	position: absolute;
+	transition: 2s ease;
+	background-color: #ffffff;
+    opacity: 0;
+    width: 80%;
+	height: auto;
+    
+    
+}
+
+.port:hover .backmove {
+	opacity: 1;
+}
+
+.port:hover .backmove {
+    
+    width: 80%;
+   
+}
+
+
+.overlay {
+	text-decoration: none;
+	font-size: 3rem;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	white-space: nowrap;
+}
+
+.overlay a {
+	color: rgb(118, 226, 255);
+}
+
+.backmove {
+    
+	height: 100%;
+	width: 80%;
+	top: 0;
+	left: 10%;
+}
+
+
+/*
+
+
+.portfolio-img {
+	width: 100%;
+	height: auto;
+	padding: 30px;
+}
+
+.port {
+    z-index: 1;
+	position: relative;
+	display: inline-block;
+}
+
+.back {
+	position: absolute;
+	transition: 1s ease;
+	background-color: #ffffff;
+	opacity: 0;
+}
+
+.port:hover .backmove {
+	opacity: 1;
+}
+
+.port:hover .backmove {
+	width: 100%;
+}
+
+.overlay {
+	text-decoration: none;
+	font-size: 3rem;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	white-space: nowrap;
+}
+
+.overlay a {
+	color: rgb(118, 226, 255);
+}
+
+.backmove {
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+}
+
+/* end flip image */
+
+
+
+.wavy {
+    position: absolute;
+    
+    top:369%;
+    display: flex;
+    font-size: 4rem;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.wavy span {
+    
+    
+    animation: waving 1.5s ease-in-out infinite;
+    animation-delay: calc(0.1s * var(--i));
+}
+
+@keyframes waving {
+    0%{
+        transform: translateY(0px);
+    }
+
+    20%{
+        transform: translateY(-15px);
+    }
+    40%, 100%{
+        transform: translateY(0px);
+    }
+}

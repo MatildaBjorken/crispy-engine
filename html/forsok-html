@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/minsida.css">
+  <title>My Website</title>
+</head>
+<body>
+
+    <div class="menu-big">
+        <input type="checkbox" class="toggler">
+        <div class="hamburger"><div></div></div>
+        <div class="menu">
+          <div>
+            <div>
+              <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Portfoilio</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </header>
+  <!-- Hero Section  -->
+  <section id="hello">
+    <div class="hello container">
+      <div>
+        <h1>Hello, <span></span></h1>
+        <h1>My Name is <span></span></h1>
+        <h1>MATILDA <span></span></h1>
+      </div>
+      <a class="color_button" href=""><botton>Contact</botton></a>
+    </div>
+  </section>
+  <!-- End Hero Section  -->
+
+  <section id="about"></section>
+  <br>
+
+  <footer class="social media">
+
+  </footer>
+
+ 
+  </section>
+  <!-- End Footer -->
+  <script src="#"></script>
+</body>
+</html>

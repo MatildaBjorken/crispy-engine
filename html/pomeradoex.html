@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+ <html lang="en" >
+
+ <head>
+   <meta charset="UTF-8">
+   <title>Pomodoro Timer</title>
+
+
+
+       <style>
+           html {
+   background-color: #d9e0f7;
+   text-align: center;
+   min-width: 350px;
+   
+   font-family: 'Noto Sans', sans-serif;
+ }
+
+ h1 {
+   font-family: 'Pacifico', cursive;
+   font-size: 4em;
+   font-weight: lighter;
+   padding: 0px;
+   margin: 0px 10px;
+ }
+
+ .container {
+   padding: 0px;
+   width: 100%;
+   max-width: 800px;
+   margin: auto;
+   text-align: center;
+ }
+
+ #pomodoro {
+   margin: 0 auto;
+   position: relative;
+   padding: 0px 10px;
+ }
+
+ #status {
+   width: 70%;
+   color: #492b2b;
+   font-size: 2em;
+   position: absolute;
+   top: 45%;
+   left:50%;
+   transform: translate(-50%, -50%);
+ }
+
+ .timerDisplay {
+   color: #fff;
+   font-size: 4em;
+   font-weight: bold;
+   position: absolute;
+   top: 60%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+ }
+
+ .btn {
+   margin: 10px;
+   padding: 8px 10px;
+   color: white;
+   font-size: 1em;
+   cursor:pointer;
+   border: 2px solid white;
+ }
+
+ #start-btn {
+   height: 40px;
+   width: 90px;
+   border-radius: 20px;
+   position: absolute;
+   bottom: 8%;
+   left: 48%;
+   transform: translate(-50%, -50%);
+   background: #4f8760;
+ }
+
+ .btn-settings {
+   background-color: #4e4e5b;
+   margin: 10px;
+   border: 1px solid #4e4e5b;
+   border-radius: 10px;
+   padding: 2px 5px;
+   min-width: 40px;
+   color: white;
+   font-size: 2em;
+   cursor:pointer;
+ }
+
+ .settings {
+   margin: auto;
+   width: 80%;
+   display: grid;
+   grid-template-columns: 2fr 1fr 2fr;
+   align-items: center;
+ }
+
+ #reset {
+   border-radius: 50px;
+   width: 80px;
+   height: 80px;
+   background: #074082;
+   transform: translate(0%, 50%);
+
+ }
+
+ #work, #break {
+   color: #4e4e5b;
+   font-weight: bold;
+ } 
+
+ #work p, #break p {
+   color: #074082;
+   background: #efc4c4;
+   padding: 5px;
+ }
+
+ .footer {
+   padding: 20px 0;
+   color: #4e4e5b;
+ }
+
+ @media only screen and (max-width: 400px) {
+   .timerDisplay {
+   font-size: 2.5em;
+   }
+ } 
+       </style>
+
+
+ </head>
+
+ <body>
+
+   <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+
+ <div class="container">
+   <h1>Pomodoro Timer</h1>
+
+   <div id="pomodoro">  
+     <img src="http://pngimages.net/sites/default/files/red-tomato-png-image-16592.png" style="width:350px; height:350px">
+     <div id="status"></div>
+     <div class="timerDisplay">00:00</div>
+     <button id="start-btn" class="btn">START</button>
+   </div>
+
+   <div class="settings">
+     <div id="work">
+       <p>Work Duration</p>
+       <button class="btn-settings" id="work-plus">+</button>
+       <div><span id="work-min">25</span> mins</div>
+       <button class="btn-settings" id="work-minus">-</button>
+     </div>
+
+     <button id="reset" class="btn">RESET</button>
+
+     <div id="break">
+       <p>Break Duration</p>
+       <button class="btn-settings" id="break-plus">+</button>
+       <div><span id="break-min">5</span> mins</div>
+       <button class="btn-settings" id="break-minus">-</button>
+     </div>
+   </div>
+
+   <p class="footer">Coded and designed by <a href="https://www.cynthialee.io" target="blank">Cynthia Lee</a></p
+
+</div>
+
+
+     <script>
+         let countdown = 0;
+            let seconds = 0;
+            let remaining = 0;
+            let isBreak = true;
+            let isPaused = true;
+
+            
+            const status = document.querySelector("#status");
+            const timerDisplay = document.querySelector(".timerDisplay");
+            const startBtn = document.getElementById("start-btn");
+            const resetBtn = document.getElementById("reset");
+            const workMin = document.getElementById("work-min");
+            const breakMin = document.querySelector("#break-min");
+            const alarm = document.createElement('audio');
+            alarm.setAttribute("src", "https://www.soundjay.com/misc/sounds/bell-ringing-05.mp3");
+
+ /* EVENT LISTENERS FOR START AND RESET BUTTONS */
+ startBtn.addEventListener('click', () => {
+   clearInterval(countdown);
+   if (isPaused) {
+     startCountdown();
+     startBtn.textContent = "Pause";
+     isPaused = false;
+   } else {
+     remaining = seconds;
+     startBtn.textContent = "Continue";
+     isPaused = true;
+   }
+ })
+
+ resetBtn.addEventListener("click", () => {
+   clearInterval(countdown);
+   seconds = workMin.textContent * 60;
+   countdown = 0;
+   remaining = 0;
+   isPaused = true;
+   isBreak = true;
+   startBtn.textContent = "Start";
+   displayTimeLeft(seconds);
+ })
+
+ /* MAIN FUNCTIONS - TIMER, START COUNTDOWN, & UPDATE DISPLAY */
+ function timer() {
+   seconds --;
+   if (seconds < 0) {
+     clearInterval(countdown);
+     alarm.currentTime = 0;
+     alarm.play();
+
+     if (isBreak) {
+       seconds = breakMin.textContent * 60;
+       status.textContent = "Take a Break!";
+       isBreak = false;
+     } else {
+       seconds = workMin.textContent * 60;
+       status.textContent = "Keep Working";
+       isBreak = true;
+     }
+     countdown = setInterval(timer, 1000);
+     return;
+   }
+   displayTimeLeft(seconds); // Keep updating display
+ }
+
+ function startCountdown() {
+   if (remaining != 0) {
+     seconds = remaining;
+   } else {
+     seconds = workMin.textContent * 60;
+     status.textContent = "Keep Working";
+   }
+   countdown = setInterval(timer, 1000);
+ }
+ /* UPDATE WORK AND BREAK TIMES */
+ function displayTimeLeft(seconds) {
+   const minutes = Math.floor(seconds / 60);
+   const remainderSeconds = seconds % 60;
+   timerDisplay.textContent = `${minutes}:${remainderSeconds < 10 ? '0' : ''}${remainderSeconds}`;
+ }
+
+
+ 
+ /* UPDATE WORK AND BREAK TIMES */
+ const workPlus = document.querySelector("#work-plus");
+ const workMinus = document.querySelector("#work-minus");
+ const breakPlus = document.querySelector("#break-plus");
+ const breakMinus = document.querySelector("#break-minus");
+
+ workPlus.addEventListener('click', () => {
+   let x = parseInt(workMin.textContent);          
+   if (x < 60) {
+     workMin.textContent = x+1;
+   }                       
+ })
+
+ workMinus.addEventListener('click', () => {
+   let x = parseInt(workMin.textContent);          
+   if (x > 5) {
+     workMin.textContent = x-1;
+   }                       
+ })
+
+ breakPlus.addEventListener('click', () => {
+   let x = parseInt(breakMin.textContent);          
+   if (x < 60) {
+     breakMin.textContent = x+1;
+   }                       
+ })
+
+ breakMinus.addEventListener('click', () => {
+   let x = parseInt(breakMin.textContent);          
+   if (x > 1) {
+     breakMin.textContent = x-1;
+   }                       
+ }) 
+
+    
+
+     </script>
+
+
+
+
+
+
+ </body>
+
+ </html>

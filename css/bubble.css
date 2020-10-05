@@ -1,0 +1,48 @@
+*{
+    margin: 0 auto;
+}
+
+body {
+    padding: 25px;
+    font-family: 'Raleway', sans-serif;
+}
+
+
+
+#balloon-gallery div{
+    display: inline-block;
+    background-image: url(../images/eyes.svg);
+    height: 12rem;
+    width: 12rem;
+    border-radius: 100%;
+ 
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+    font-size: 40px;
+    font-family: sans-serif, arial;
+    border-radius: 100%;
+    margin-top: 20px;
+    
+   
+}
+
+
+
+#yay-no-balloons {
+    display:none;
+    color: rgb(161, 46, 255);
+    font-size:100px;
+    text-transform: uppercase;
+    font-size: 70px;
+   
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transform: translateY(350%);
+ 
+}
+
+
+

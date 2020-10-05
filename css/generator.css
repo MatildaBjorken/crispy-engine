@@ -1,0 +1,173 @@
+*{
+    margin: 0;
+}
+
+body{
+    background-color: rgb(255, 255, 255);
+    
+    
+   
+}
+
+
+
+#condition {
+    width: 70%;
+    color: #000000;
+    font-size: 1em;
+    position: absolute;
+    top: 15%;
+    left:50%;
+    transform: translate(-50%, -50%);
+  }
+
+
+.container {
+    padding: 30px;
+    width: 100%;
+    max-width: 50%;
+    margin: auto;
+    text-align: center;
+
+}
+
+
+
+
+#circle {
+    
+    display: inline-block;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    border-style: solid;
+    border-width: 2px;
+    border-color: blue;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+#startTimer {
+    transform: translate(0%, 600%);
+}
+
+#timerDisplay {
+    transform: translate(0%, 600%);
+}
+
+
+.settings {
+    margin: auto;
+    width: 10%;
+    display: inline-grid;
+    align-items: center;
+}
+
+.timeClock {
+    padding: 10px;
+}
+
+
+/* button style*/
+.plusSymbol, .minusSymbol {
+    width: 30px;
+    height: 30px;
+    margin: 10px;
+    border: 1px solid #4e4e5b;
+    border-radius: 100px;
+    background-color: rgba(0, 0, 0, 0);
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    cursor:pointer;
+    background: white;
+	border-radius: 100%;
+	animation: growing 1.2s ease infinite;
+}
+
+
+
+.plusSymbol:hover,
+.plusSymbol:focus {
+    background: #2eff9d;
+}
+
+.plusSymbol:active {
+    transform: scale(1.1);
+}
+@keyframes growing {
+    0% {
+         transform: scale(1, 1);
+    }
+    10% {
+         transform: scale(0.925, 0.925);
+    }
+    30% {
+         transform: scale(1.025, 1.025);
+    }
+    50% {
+         transform: scale(1, 1);
+    }
+}
+
+/* end button styles*/
+
+
+/* break generator */
+
+#main{
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding:10px;
+}
+  
+.text{
+    text-align:center;
+    text-transform: uppercase;
+}
+
+#break{
+    text-align:center;
+    color:black;
+    
+    margin: 0 auto;
+    
+}
+
+#chill{
+    text-align:center;
+    color:black;
+    margin: 0 auto;
+    
+}
+
+#symbol{
+    text-align:center;
+    color:black;
+    font-weight:bold;
+    width:100px;
+    margin: 0 auto;
+    padding:10px;
+}
+  
+#button{
+    width:120px;
+    height:30px;   
+    padding:10px;
+    cursor: pointer;
+    line-height:30px;
+    position: relative;
+    left: 50%;
+    transform:translateX(-50%);
+    border-radius: 50px;
+    margin-top:30px;
+    color:white;
+    background-color:#adabab;
+    text-align:center;  
+}
+
+#button:active{
+    scale: 1.5px;
+}
+
+/* end break generator */

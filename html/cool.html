@@ -1,0 +1,81 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+}
+
+#sky {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+ 
+}
+
+#cloud-1, #cloud-2, #cloud-3,#cloud-5 {
+  width: 30vw;
+  float: left;
+  margin: 0 1.6vw;
+  transform: translateX(10%) translateY(10%);
+}
+
+img {
+  width: 100%;
+}
+
+#cloud-1 {
+  margin-top: 20vh;
+}
+
+#cloud-2 {
+  margin-top: 10vh;
+}
+
+#cloud-3 {
+  margin-top: 15vh;
+}
+</style>
+<body>
+    <div id="sky">    
+        <div id="cloud-1">
+          <img src="../images/eyes.svg">
+        </div>
+        <div id="cloud-2">
+          <img src="../images/eyes.svg"> 
+        </div>
+        <div id="cloud-3">
+          <img src="../images/eyes.svg">  
+        </div>
+
+      </div>
+
+      <script>
+          window.onload = function(){
+	let sky = document.querySelector('#sky'),
+			elemOne   = document.querySelector('#cloud-1'),
+			elemTwo   = document.querySelector('#cloud-2'),
+			elemThree = document.querySelector('#cloud-3'),
+            elemFour  = document.querySelector('#cloud-4');
+       
+
+	sky.addEventListener('mousemove',function(e){
+		var pageX = e.clientX - window.innerWidth/2,
+                pageY = e.clientY - window.innerHeight/2;
+  	elemOne.style.transform = 'translateX(' + (10 + pageX/50) + '%) translateY(' + (10 + pageY/50) + '%)';
+  	elemTwo.style.transform = 'translateX(-' + (10 + pageX/75) + '%) translateY(-' + (10 + pageY/75) +  '%)';
+      elemThree.style.transform = 'translateX(-' + (10 + pageX/150) + '%) translateY(' + (10 + pageY/150) +  '%)';
+      
+  
+    });
+    
+
+}
+      </script>
+</body>
+</html>

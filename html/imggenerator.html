@@ -1,0 +1,39 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="myImages()">generate</button>
+    
+
+    <script>
+        var images= ["images/1.png","images/2.png"]
+        function myImages() {
+            document.getElementById("images").src = images [2]
+        }
+        <div id="clock">
+        <p id="forHours" class="label">hours</p>
+        <p id="forMinutes" class="label">minutes</p>
+        <p id="forSecounds" class="label">secounds</p>
+
+        
+        <input id="hours"type="number" max="10" min="0" value="0" class="time"><p id="p1" class="dots">:</p>
+
+        <input id="minutes" type="number" max="60" min="0" value="0" class="time"><p id="p2" class="dots">:</p>
+
+        <input id="secounds" type="number" max="60" min="0" value="0" class="time">
+
+        <button id="start" class="btn">start</button>
+        <button id="reset" class="btn">reset</button>
+        <button id="stop" class="btn">stop</button>
+
+        
+
+    </div>   
+
+
+    </script>
+</body>
+</html>

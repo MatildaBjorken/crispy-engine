@@ -1,0 +1,319 @@
+* {
+    margin: 0;
+}
+
+.cv{
+   
+    
+    object-fit: cover;
+    max-width: 100%;
+  
+
+}
+
+@media  (max-width: 340px){
+    /* Probably some parent element that limits the img width */
+    .cv {
+        height: 80%;
+        width: 30%;
+    }
+  }
+
+/*
+.portfolio-img {
+    width: 70%;
+    height: 100%;
+   
+    
+}
+
+.port{
+    position: relative;
+    display: block;
+   
+}
+
+.back{
+    display: block;
+    position: absolute;
+    transition: 1s ease;
+    background-color: #ffffff;
+    -webkit-transform: scale(0);
+    -ms-transform: scale(0);
+    transform: scale(0);
+    -webkit-transition: 1s ease;
+    
+}
+
+.port:hover .backmove{
+
+   
+    transform: scale(1);
+}
+
+.overlay {
+   
+    text-decoration: none;
+    font-size: 3rem;
+    position: absolute;
+    left:50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    white-space: nowrap;
+    
+}
+
+.overlay a {
+    color: rgb(118,226,255);
+}
+
+.backmove{
+    
+    width: 70%;
+    height: 100%;
+    top: 0px;
+    left:0;
+   
+}
+
+
+/* flip image */
+
+/*
+
+.portfolio-img {
+  
+    display: inline-block;
+    width: 70%;
+    height: 100%;
+    
+}
+
+
+.port{
+    position: relative;
+    margin:10px 0 10px 0;
+    width: 50%;  
+}
+
+.back{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #ffffff;
+    overflow: none;
+    width: 0;
+    height: 100%;
+    transition: .5s ease;
+}
+
+.port:hover .backmove{
+   opacity: 1;
+}
+
+.overlay {
+    text-decoration: none;
+    font-size: 3rem;
+    position: absolute;
+    left:50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    white-space: nowrap;
+}
+
+.overlay a {
+    color: rgb(118,226,255);
+}
+
+.backmove{
+
+    width: 70%;
+    height: 100%;
+    top: 0;
+    left:0;
+    overflow: hidden;
+}
+
+.port:hover .backmove{
+
+    width: 100%;
+ }
+/* end flip image */
+
+/*
+
+
+.portfolio-img {
+    width: 50%;
+    height: auto;
+    padding: 30px;
+}
+
+.port{
+    position: relative;
+    display: inline-block;
+}
+
+.back{
+  
+    position: absolute;
+    transition: 1s ease;
+    background-color: #ffffff;
+  
+  opacity: 0;
+}
+
+
+.port:hover .backmove{
+   
+    opacity: 1;
+ }
+ .port:hover .backmove{
+    
+     width: 100%;
+  }
+ 
+
+.overlay {
+    text-decoration: none;
+    font-size: 3rem;
+    position: absolute;
+    left:50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    white-space: nowrap;
+    
+}
+
+.overlay a {
+    color: rgb(118,226,255);
+}
+
+.backmove{
+    
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left:0;
+   
+}
+
+
+.portfolio-img {
+    width: 100%;
+    height: auto;
+    padding: 30px;
+}
+
+.port{
+    position: relative;
+    display: inline-block;
+}
+
+.back{
+  
+    position: absolute;
+    transition: 1s ease;
+    background-color: #ffffff;
+  
+  opacity: 0;
+}
+
+
+.port:hover .backmove{
+   
+    opacity: 1;
+ }
+ .port:hover .backmove{
+    
+     width: 87.4%;
+  }
+ 
+
+.overlay {
+    text-decoration: none;
+    font-size: 3rem;
+    position: absolute;
+    left:50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    white-space: nowrap;
+    
+}
+
+.overlay a {
+    color: rgb(118,226,255);
+}
+
+.backmove{
+    
+    width: 0%;
+    top: 30px;
+    left:30px;
+    bottom: 32px;
+   
+} end
+
+.portfolio-img {
+  
+    display: inline-block;
+    margin: 25px 10px;
+   
+    width: 100%;
+    height: auto;
+}
+
+
+.port{
+    position: relative;
+    margin:10px 0 10px 0;
+    width: 50%;  
+}
+
+.back{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #008CBA;
+    overflow: none;
+    width: 0;
+    height: 100%;
+    transition: .5s ease;
+}
+
+.port:hover .backmove{
+   opacity: 1;
+}
+
+.overlay {
+    text-decoration: none;
+    font-size: 3rem;
+    position: absolute;
+    left:50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    white-space: nowrap;
+}
+
+.overlay a {
+    color: rgb(118,226,255);
+}
+
+.backmove{
+
+    height: 100%;
+    width: 0;
+    top: 0;
+    left:0;
+    overflow: hidden;
+}
+
+.port:hover .backmove{
+
+    width: 100%;
+ }
+
+
+
